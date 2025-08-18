@@ -81,20 +81,22 @@ variable "subscription_id" {
 **output.tf**
 ```hcl
 output "instance_id" {
-  description = "The ID of the Azure VM"
-  value       = module.relianoid_vm.vm_id
+description = "The ID of the Azure VM"
+value = module.relianoid-enterprise.vm_id
 }
-
 output "instance_public_ip" {
-  description = "The public IP of the VM"
-  value       = module.relianoid_vm.vm_public_ip
+description = "The public IP of the Azure VM"
+value = module.relianoid-enterprise.vm_public_ip
 }
-
 output "instance_private_ip" {
-  description = "The private IP in the VNet"
-  value       = module.relianoid_vm.vm_private_ip
-}
+description = "The private IP of the Azure VM"
+value = module.relianoid-enterprise.vm_private_ip
+} 
+
 ```
+- ssh-keygen -t rsa -b 4096 -f id_rsa
+
+- This creates **id_rsa** (private key) and **id_rsa.pub** (public key). Keep the keys in the same directory where Terraform files are stored.
 
 📌 **Notes:**  
 - The module provisions all required Azure resources internally: Resource Group, VNet, Subnet, NSG, VM, NIC, Public IP.  
