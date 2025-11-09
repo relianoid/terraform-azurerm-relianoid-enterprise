@@ -97,7 +97,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     publisher = "67723d6e-d0d2-4497-9ea1-3fd1d370756a"
     offer     = "relianoid-enterprise-edition"
     sku       = "relianoid-enterprise-plan"
-    version   = "latest"
+    version   = "1.0.1"
   }
 
   plan {
